@@ -50,10 +50,13 @@ asistenciaDataFrame=pd.read_csv("../data/asistencia_estudiantes_completo.csv")
 #6. Encontrar los estudiantes que llegan en metro
 #estudiantesMetro=asistenciaDataFrame.query('medio_transporte=="metro"')
 #print(estudiantesMetro)
+
 #7. Encontrar los estudiantes que llegaron en bicicleta
+
 #8. Encontrar todos los estudiantes menos los que llegaron a pie
 #estudiantesQueNoCaminan=asistenciaDataFrame.query('medio_transporte!="a pie"')
 #print(asistenciaDataFrame["medio_transporte"].unique())
+
 #9. Encontrar todos los registros de asistencia de junio
 #10.Encontrar todos los estudiantes que usan transportes ecologicos
 #11.Encontrar los estudiantes q usan bus y son de estrato alto 
@@ -62,11 +65,16 @@ asistenciaDataFrame=pd.read_csv("../data/asistencia_estudiantes_completo.csv")
 
 #Conteo por agrupaciones
 #1.Conteo de registros por estado de asistencia
-conteo=asistenciaDataFrame.groupby('estado').size()
-print(conteo)
+#conteo=asistenciaDataFrame.groupby('estado').size()
+#print(conteo)
+
 #2.Obtener el numero de registros por estrato
 #3.Cantidad de estudiantes por medio de transporte
+#conteoMedioTransporte=asistenciaDataFrame.groupby('medio_transporte').size()
+#print(conteoMedioTransporte)
 #4.Promedio de estrato por estado de asistencia
+promedioAsistenciaPorEstrato=asistenciaDataFrame.groupby('estado')['estrato'].mean()
+print(promedioAsistenciaPorEstrato)
 #5.Maximo estrato por estado
 #6.Minimo estarto por estado
 #7.Conteo de asistencias por grupo y estado
